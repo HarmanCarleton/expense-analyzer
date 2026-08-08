@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from analyst import calculate_category_totals
+import os
 
 def generate_category_chart(statement_month: str, card_name: str,save_path: str = None) -> str:
     """
