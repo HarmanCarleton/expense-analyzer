@@ -14,7 +14,8 @@ def generate_category_chart(statement_month: str, card_name: str,save_path: str 
     amounts = [item[1] for item in sorted_items]
 
     if save_path is None:
-        save_path = f"reports/chart_{statement_month}.png"
+        os.makedirs("reports", exist_ok=True)
+        save_path = f"reports/chart_{card_name,"_",statement_month}.png"
 
     plt.figure(figsize=(10, 6))
     plt.bar(categories, amounts, color="#4A90D9")
