@@ -1,0 +1,23 @@
+# Never commit real financial data
+statements/
+*.pdf
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment variables (API keys, later)
+.env
+
+merchant_memory.json
+
+expenses.db
+
+reports/
+
+merchant_embeddings.json
+
+.streamlit/secrets.toml
