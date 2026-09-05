@@ -66,15 +66,12 @@ A multi-agent AI system that turns raw credit card PDF statements into categoriz
 ## Security Notes
 
 - Real financial statements, the SQLite database, and merchant memory files are excluded from version control (see `.gitignore`).
-- The public demo deployment (if applicable) uses synthetic data only — see [Live Demo](#) section.
+- The public demo deployment (if applicable) uses synthetic data only.
 
 ## Live Demo
 
-[Add your deployed Streamlit URL here once deployed]
+https://expense-analyzer-harman.streamlit.app/
 
-**Login:**
-- Username: `admin`
-- Password: `a`
 
 Note: This is a portfolio demo. Please don't upload real financial statements —
 use the app to explore the categorization, multi-agent analysis, and Q&A features

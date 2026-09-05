@@ -9,34 +9,7 @@ from reporter import generate_monthly_report
 
 from qa import answer_question
 
-# --- Basic authentication gate ---
-def check_password():
-    def password_entered():
-        correct_username = st.secrets.get("APP_USERNAME", os.getenv("APP_USERNAME", "admin"))
-        correct_password = st.secrets.get("APP_PASSWORD", os.getenv("APP_PASSWORD", ""))
 
-        if (st.session_state.get("username") == correct_username
-                and st.session_state.get("password") == correct_password):
-            st.session_state["authenticated"] = True
-            del st.session_state["password"]  # don't keep the password sitting in memory
-        else:
-            st.session_state["authenticated"] = False
-
-    if st.session_state.get("authenticated"):
-        return True
-
-    st.title("💳 Personal Expense Analyzer")
-    st.text_input("Username", key="username")
-    st.text_input("Password", type="password", key="password")
-    st.button("Login", on_click=password_entered)
-
-    if "authenticated" in st.session_state and not st.session_state["authenticated"]:
-        st.error("Incorrect username or password.")
-
-    return False
-
-if not check_password():
-    st.stop()  # halts execution here — nothing below this line renders until authenticated
 MAX_RETRIES = 2
 
 CATEGORIES = [
